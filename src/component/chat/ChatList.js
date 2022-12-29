@@ -1,10 +1,12 @@
 import { chatListData } from '../../lib/dummy/chatdata';
 import ChatItem from '../chat/ChatItem';
 import styled from 'styled-components';
+import WeatherContents from './WeatherContents';
 
 export default function ChatList() {
   return (
     <>
+      <WeatherContents />
       <S_Ul>
         {chatListData.map((chat, idx) => (
           <ChatItem key={idx} {...chat} />
@@ -20,7 +22,7 @@ const S_Ul = styled.ul`
   flex-direction: column;
   gap: 8px;
   position: relative;
-  :first-child::before {
+  ::before {
 		content: '';
 		width: 12px;
 		height: 12px;
